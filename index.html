@@ -15,6 +15,181 @@
 			<a href="#Hooks" class="nav-link">Hooks</a>
 			<a href="#FAQ" class="nav-link">FAQ</a>
 		</nav>
+		
+		<!-- main -->
+		<main id="main-doc">
+			<section class="main-section" id="Main_Concepts">
+				<header>Main Concepts</header>
+				<h3>Introducing JSX</h3>
+				<p>
+					This funny tag syntax is neither a string nor HTML. It is called JSX,
+					and it is a syntax extension to JavaScript. We recommend using it with
+					React to describe what the UI should look like. JSX may remind you of
+					a template language, but it comes with the full power of JavaScript.
+					JSX produces React “elements”. We will explore rendering them to the
+					DOM in the next section. Below, you can find the basics of JSX
+					necessary to get you started.
+				</p>
+
+				<code>
+					<xmp>
+            const element = <h1>Hello, world!</h1>;
+          </xmp>
+				</code>
+
+				<p>
+					React embraces the fact that rendering logic is inherently coupled
+					with other UI logic: how events are handled, how the state changes
+					over time, and how the data is prepared for display.
+				</p>
+
+				<p>
+					Instead of artificially separating technologies by putting markup and
+					logic in separate files, React separates concerns with loosely coupled
+					units called “components” that contain both. We will come back to
+					components in a further section, but if you’re not yet comfortable
+					putting markup in JS, this talk might convince you otherwise.
+				</p>
+
+				<p>Embedding Expressions in JSX</p>
+				<code>
+					<xmp>
+            const name = 'Josh Perez';
+            const element = <h1>Hello, {name}</h1>;
+            ReactDOM.render(
+              element,
+            document.getElementById('root')
+            );
+          </xmp>
+				</code>
+			</section>
+
+			<section class="main-section" id="Advanced_Guides">
+				<header>Advanced Guides</header>
+
+				<h3>Why Accessibility?</h3>
+				<p>
+					Web accessibility (also referred to as a11y) is the design and
+					creation of websites that can be used by everyone. Accessibility
+					support is necessary to allow assistive technology to interpret web
+					pages. React fully supports building accessible websites, often by
+					using standard HTML techniques.
+				</p>
+
+				<h3>WAI-ARIA</h3>
+				<p>
+					The Web Accessibility Initiative - Accessible Rich Internet
+					Applications document contains techniques for building fully
+					accessible JavaScript widgets. Note that all aria-* HTML attributes
+					are fully supported in JSX. Whereas most DOM properties and attributes
+					in React are camelCased, these attributes should be hyphen-cased (also
+					known as kebab-case, lisp-case, etc) as they are in plain HTML:
+				</p>
+
+				<code>
+					<xmp>
+            <input
+            type="text"
+              aria-label={labelText}
+              aria-required="true"
+              onChange={onchangeHandler}
+              value={inputValue}
+              name="name"
+            />
+          </xmp>
+				</code>
+
+				<h3>Semantic HTML</h3>
+				<p>
+					Semantic HTML is the foundation of accessibility in a web application.
+					Using the various HTML elements to reinforce the meaning of
+					information in our websites will often give us accessibility for free.
+				</p>
+				<code>
+					<xmp>
+             import React, { Fragment } from 'react';
+            function ListItem({ item }) {
+              return (
+            <Fragment>
+              <dt>{item.term}</dt>
+              <dd>{item.description}</dd>
+            </Fragment>
+          );
+        }
+          </xmp>
+				</code>
+			</section>
+
+			<section class="main-section" id="API_Reference">
+				<header>API Reference</header>
+				<h3>React Top-Level API</h3>
+				<p>
+					React components let you split the UI into independent, reusable
+					pieces, and think about each piece in isolation. React components can
+					be defined by subclassing React.Component or React.PureComponent.
+				</p>
+				<p>
+					If you don’t use ES6 classes, you may use the create-react-class
+					module instead. See Using React without ES6 for more information.
+				</p>
+				<h3>Creating React Elements</h3>
+				<p>
+					We recommend using JSX to describe what your UI should look like. Each
+					JSX element is just syntactic sugar for calling React.createElement().
+					You will not typically invoke the following methods directly if you
+					are using JSX.
+				</p>
+				<ul>
+					<li>createElement()</li>
+					<li>createFactory()</li>
+				</ul>
+
+				<h3>Transforming Elements</h3>
+				<p>React provides several APIs for manipulating elements:</p>
+				<ul>
+					<li>cloneElement()</li>
+					<li>isValidElement()</li>
+					<li>React.Children</li>
+				</ul>
+			</section>
+
+			<section class="main-section" id="Hooks">
+				<header>Hooks</header>
+				<h3>Introducing Hooks</h3>
+				<p>
+					Hooks are a new addition in React 16.8. They let you use state and
+					other React features without writing a class.
+				</p>
+
+				<code>
+					<xmp
+> 
+              {
+              "items": [
+                { "id": 1, "name": "Apples",  "price": "$2" },
+                { "id": 2, "name": "Peaches", "price": "$5" }
+              ] 
+            }
+
+          </xmp>
+				</code>
+			</section>
+
+			<section class="main-section" id="FAQ">
+				<header>FAQ</header>
+				<h3>AJAX and APIs</h3>
+				<p>
+					You can use any AJAX library you like with React. Some popular ones
+					are Axios, jQuery AJAX, and the browser built-in window.fetch.
+				</p>
+				<h3>Where in the component lifecycle should I make an AJAX call?</h3>
+				<p>
+					You should populate data with AJAX calls in the componentDidMount
+					lifecycle method. This is so you can use setState to update your
+					component when the data is retrieved.
+				</p>
+			</section>
+		</main>
 
 		<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 		<script src="js/index.js"></script>
