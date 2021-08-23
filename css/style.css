@@ -31,3 +31,36 @@ nav a {
 	padding: 15px;
 	text-decoration: none;
 }
+
+/* main */
+main {
+	flex: 1;
+	height: 100vh;
+	overflow-y: scroll;
+}
+
+section {
+	padding: 20px;
+	line-height: 1.5;
+}
+
+section header {
+	font-weight: 500;
+	letter-spacing: 1px;
+	font-size: 20px;
+}
+
+xmp {
+	background-color: #eee;
+	margin: 0.8rem 0;
+}
+
+ul li {
+	margin: 0.5rem;
+	padding-left: 1rem;
+}
+
+h3 {
+	margin-top: 0.5rem;
+
+}
