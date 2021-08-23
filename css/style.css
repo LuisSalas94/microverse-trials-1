@@ -1,0 +1,33 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	list-style: none;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* nav */
+nav {
+	background-color: #eee;
+	border-right: 1px solid #222;
+	height: 100vh;
+	width: 300px;
+}
+
+nav header {
+	padding: 15px;
+	font-weight: bold;
+}
+
+nav a {
+	border-top: 1px solid #222;
+	color: #222;
+	display: block;
+	padding: 15px;
+	text-decoration: none;
+}
