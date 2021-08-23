@@ -62,5 +62,16 @@ ul li {
 
 h3 {
 	margin-top: 0.5rem;
+}
 
+/* Added media querie */
+@media (max-width: 768px) {
+	body {
+		flex-direction: column;
+	}
+	nav {
+		width: 100%;
+		text-align: center;
+		height: auto;
+	}
 }
